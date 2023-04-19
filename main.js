@@ -241,12 +241,35 @@ const pets = [
     }
   ];
 
-const targetingApp = document.querySelector("#app");
-console.log(targetingApp);
+// const targetingApp = document.querySelector("#app");
+// console.log(targetingApp);
 
-let domString= '';
+// let domString= '';
 
-for (let pet of pets) {
+// for (let pet of pets) {
+//   // CARD FROM BOOTSTRAP: https://getbootstrap.com/docs/5.1/components/card/#example Removed the button
+//   domString += `<div class="card" style="width: 18rem;">
+//       <img src=${pet.imageUrl} class="card-img-top" alt=${pet.name}>
+//       <div class="card-body">
+//         <h5 class="card-title">${pet.name}</h5>
+//         <p class="card-text">Type: ${pet.type}</p>
+//         <p class="card-text">Color: ${pet.color}</p>
+//         <p class="card-text">Special Skill: ${pet.specialSkill}</p>
+//       </div>
+//     </div>`
+// };
+
+// targetingApp.innerHTML = domString;
+// console.log(domString);
+
+const renderToDom = (divId, htmlToRender) => {
+  const selectedDiv = document.querySelector(divId);
+  selectedDiv.innerHTML = htmlToRender;
+};
+
+const cardsOnDom = (array) => {
+  let domString = "";
+ for (let pet of array) {
   // CARD FROM BOOTSTRAP: https://getbootstrap.com/docs/5.1/components/card/#example Removed the button
   domString += `<div class="card" style="width: 18rem;">
       <img src=${pet.imageUrl} class="card-img-top" alt=${pet.name}>
@@ -259,5 +282,44 @@ for (let pet of pets) {
     </div>`
 };
 
-targetingApp.innerHTML = domString;
-console.log(domString);
+
+  renderToDom("#app", domString);
+}
+
+const filter = (array, petType) => {
+  const typeArray = [];
+
+
+  for (const pet of array) {
+    if (pet.type === petType) {
+      typeArray.push(pet);
+    }
+  }
+
+  return typeArray;
+}
+
+const showDogsButton = document.querySelector("#dogs");
+const showCatsButton = document.querySelector("#cats");
+const showDinosButton = document.querySelector("#dinos");
+const showAllButton = document.querySelector("#menagerie");
+
+
+showAllButton.addEventListener('click', () => {
+  cardsOnDom(pets);
+});
+
+showDogsButton.addEventListener('click', () => {
+  const dogs = filter(pets, "dog");
+  cardsOnDom(dogs);
+});
+
+showCatsButton.addEventListener('click', () => {
+  const cats = filter(pets, "cat");
+  cardsOnDom(cats);
+});
+
+showDinosButton.addEventListener('click', () => {
+  const dinos = filter(pets, "dino");
+  cardsOnDom(dinos);
+});

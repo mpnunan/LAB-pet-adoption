@@ -1,5 +1,6 @@
 body {
   background-color: aqua;
+  margin: 20px;
 }
 
 #app {
@@ -17,3 +18,68 @@ body {
   border: 5px solid pink;
   border-radius: 10px;;
 }
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  background-color: plum;
+  border: 5px solid pink;
+  border-radius: 10px;
+  margin-left: 30%;
+  margin-right: 30%;
+  padding: 15px;
+ }
+
+ .buttons > * {
+  background-color: purple;
+  font-size: 40px;
+  font-family: fantasy;
+  color: aqua;
+  border: 5px solid pink;
+  border-radius: 10px;
+ }
+
+ .buttons > *:hover {
+  color: lightskyblue;
+ }
+
+ .buttons > *:active {
+  background-color: lightcoral;
+  color: blueviolet;
+  border-color: aqua;
+ }
+
+ #menagerie {
+  display: flex;
+  background-color: plum;
+  font-size: 40px;
+  font-family: fantasy;
+  color: aqua;
+  border: 5px solid pink;
+  border-radius: 10px;
+  justify-content: center;
+  margin-left: 35%;
+  margin-right: 35%;
+  margin-top: 20px;
+ }
+
+
+ #menagerie > * {
+  background-color: purple;
+  font-size: 40px;
+  font-family: fantasy;
+  color: aqua;
+  border: 5px solid pink;
+  border-radius: 10px;
+  margin: 10px;
+ }
+
+ #menagerie > *:hover {
+  color: lightskyblue;
+ }
+
+ #menagerie > *:active {
+  background-color: lightcoral;
+  color: blueviolet;
+  border-color: aqua;
+ }
