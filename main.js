@@ -241,26 +241,7 @@ const pets = [
     }
   ];
 
-// const targetingApp = document.querySelector("#app");
-// console.log(targetingApp);
 
-// let domString= '';
-
-// for (let pet of pets) {
-//   // CARD FROM BOOTSTRAP: https://getbootstrap.com/docs/5.1/components/card/#example Removed the button
-//   domString += `<div class="card" style="width: 18rem;">
-//       <img src=${pet.imageUrl} class="card-img-top" alt=${pet.name}>
-//       <div class="card-body">
-//         <h5 class="card-title">${pet.name}</h5>
-//         <p class="card-text">Type: ${pet.type}</p>
-//         <p class="card-text">Color: ${pet.color}</p>
-//         <p class="card-text">Special Skill: ${pet.specialSkill}</p>
-//       </div>
-//     </div>`
-// };
-
-// targetingApp.innerHTML = domString;
-// console.log(domString);
 
 const renderToDom = (divId, htmlToRender) => {
   const selectedDiv = document.querySelector(divId);
@@ -272,15 +253,16 @@ const cardsOnDom = (array) => {
  for (let pet of array) {
   // CARD FROM BOOTSTRAP: https://getbootstrap.com/docs/5.1/components/card/#example Removed the button
   domString += `<div class="card" style="width: 18rem;">
-      <img src=${pet.imageUrl} class="card-img-top" alt=${pet.name}>
+      <img src="${pet.imageUrl}" class="card-img-top" alt=${pet.name}>
       <div class="card-body">
         <h5 class="card-title">${pet.name}</h5>
         <p class="card-text">Type: ${pet.type}</p>
         <p class="card-text">Color: ${pet.color}</p>
         <p class="card-text">Special Skill: ${pet.specialSkill}</p>
+        <button class="btn btn-danger" id="delete--${pets.id}">Delete</button>
       </div>
     </div>`
-};
+  }
 
 
   renderToDom("#app", domString);
@@ -323,3 +305,25 @@ showDinosButton.addEventListener('click', () => {
   const dinos = filter(pets, "dino");
   cardsOnDom(dinos);
 });
+
+const form = document.querySelector('form');
+
+const addPet = (e) => {
+  e.preventDefault();
+    
+  const newPetObj = {
+   
+    id: pets.length + 1,
+    name: document.querySelector("#name").value,
+    color: document.querySelector("#color").value,
+    specialSkill: document.querySelector("#specialSkill").value,
+    type: document.querySelector("#type").value,
+    imageUrl: document.querySelector("#image").value
+  }
+
+  pets.push(newPetObj);
+  cardsOnDom(pets);
+  form.reset();
+}
+
+form.addEventListener('submit', addPet);
