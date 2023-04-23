@@ -6,3 +6,7 @@
 * Review the [Instructions](instructions.md)
 
 # UPDATE THIS README WHEN THE ASSIGNMENT IS COMPLETED
+
+
+# added CRUD, all working as expected
+# hosted on https://adoptin-pets.netlify.app/
