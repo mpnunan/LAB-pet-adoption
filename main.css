@@ -83,3 +83,28 @@ body {
   color: blueviolet;
   border-color: aqua;
  }
+
+ form {
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: purple;
+  border-radius: 20px;
+
+ }
+
+ form > h3 {
+  text-align: center;
+  color: plum;
+ }
+form > * {
+  padding: 20px;
+}
+ 
+
+ form > div > label {
+  text-indent: 20px;
+  font-family: fantasy;
+  font-size: large;
+  color: purple;
+
+ }
