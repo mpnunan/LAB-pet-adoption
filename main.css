@@ -108,3 +108,20 @@ form > * {
   color: purple;
 
  }
+
+ .label::after {
+  visibility: hidden;
+ }
+
+ .dog-bg {
+  background-color: papayawhip;
+ }
+
+ .cat-bg {
+  background-color: violet;
+ }
+
+ .dino-bg {
+  background-color: black;
+  color: red;
+ }

@@ -252,7 +252,7 @@ const cardsOnDom = (array) => {
   let domString = "";
  for (let pet of array) {
   // CARD FROM BOOTSTRAP: https://getbootstrap.com/docs/5.1/components/card/#example Removed the button
-  domString += `<div class="card" style="width: 18rem;">
+  domString += `<div class="card ${pet.type}-bg" style="width: 18rem;">
       <img src="${pet.imageUrl}" class="card-img-top" alt=${pet.name}>
       <div class="card-body">
         <h5 class="card-title">${pet.name}</h5>
@@ -341,6 +341,9 @@ app.addEventListener('click', (e) => {
 
   }
 });
+
+
+
 
 const startApp = () => {
   cardsOnDom(pets);
