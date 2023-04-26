@@ -14,9 +14,10 @@ body {
 }
 
 #app > .card {
+  text-align: center;
   margin: 10px 5px 10px 5px;
   border: 5px solid pink;
-  border-radius: 10px;;
+  border-radius: 30px;;
 }
 
 .buttons {
@@ -107,4 +108,41 @@ form > * {
   font-size: large;
   color: purple;
 
+ }
+
+ .label::after {
+  visibility: hidden;
+ }
+
+ .dog-bg {
+  background-color: papayawhip;
+ }
+
+ .cat-bg {
+  background-color: violet;
+ }
+
+ .dino-bg {
+  background-color: black;
+  color: red;
+ }
+
+ .card-title {
+  border: 2px solid powderblue;
+  border-radius: 15px;
+  padding: 5px 10px;
+  margin-left: 20%;
+  margin-right: 20%;
+ }
+
+ .card-img-top {
+  border-radius: 40px;
+ }
+
+ #radioMod {
+  display: flex;
+  flex-flow: row nowrap;
+  color: plum;
+  font-weight: bold;
+  font-size: large;
  }

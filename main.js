@@ -250,14 +250,24 @@ const renderToDom = (divId, htmlToRender) => {
 
 const cardsOnDom = (array) => {
   let domString = "";
+  const capLetters = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
  for (let pet of array) {
+  let animal = pet.type;
+  let animalAnimal = capLetters(animal);
+  
+  let petColor = pet.color;
+  let colorColor = capLetters(petColor)
   // CARD FROM BOOTSTRAP: https://getbootstrap.com/docs/5.1/components/card/#example Removed the button
-  domString += `<div class="card" style="width: 18rem;">
-      <img src="${pet.imageUrl}" class="card-img-top" alt=${pet.name}>
+  domString += `<div class="card ${pet.type}-bg" style="width: 18rem;">
+      
       <div class="card-body">
         <h5 class="card-title">${pet.name}</h5>
-        <p class="card-text">Type: ${pet.type}</p>
-        <p class="card-text">Color: ${pet.color}</p>
+        <img src="${pet.imageUrl}" class="card-img-top" alt=${pet.name}>
+        <p class="card-text">${colorColor} ${animalAnimal}</p>
+        
         <p class="card-text">Special Skill: ${pet.specialSkill}</p>
         <button class="btn btn-danger" id="delete--${pet.id}">Adopt!</button>
       </div>
@@ -317,7 +327,8 @@ const addPet = (e) => {
     name: document.querySelector("#name").value,
     color: document.querySelector("#color").value,
     specialSkill: document.querySelector("#specialSkill").value,
-    type: document.querySelector("#type").value,
+    // type: document.querySelector("#type").value,
+    type: document.querySelector("input[name='inlineRadioOptions']:checked").value,
     imageUrl: document.querySelector("#image").value
   }
 
@@ -341,6 +352,9 @@ app.addEventListener('click', (e) => {
 
   }
 });
+
+
+
 
 const startApp = () => {
   cardsOnDom(pets);
