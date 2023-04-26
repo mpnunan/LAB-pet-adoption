@@ -327,7 +327,8 @@ const addPet = (e) => {
     name: document.querySelector("#name").value,
     color: document.querySelector("#color").value,
     specialSkill: document.querySelector("#specialSkill").value,
-    type: document.querySelector("#type").value,
+    // type: document.querySelector("#type").value,
+    type: document.querySelector("input[name='inlineRadioOptions']:checked").value,
     imageUrl: document.querySelector("#image").value
   }
 

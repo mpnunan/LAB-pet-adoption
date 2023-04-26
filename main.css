@@ -138,3 +138,11 @@ form > * {
  .card-img-top {
   border-radius: 40px;
  }
+
+ #radioMod {
+  display: flex;
+  flex-flow: row nowrap;
+  color: plum;
+  font-weight: bold;
+  font-size: large;
+ }

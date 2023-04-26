@@ -34,15 +34,30 @@
       <div class="modal-body">
         <form>
           <h3 id="form-header">Know of a cool pet looking for love? Tell us all about them below!</h3>
+          <div id="radioMod">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="wwdog" value="dog">
+              <label class="form-check-label" for="wdog">Dog</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="wwcat" value="cat">
+              <label class="form-check-label" for="wcat">Cat</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="wwdino" value="dino">
+              <label class="form-check-label" for="wdino">Dino</label>
+            </div>
+          </div>
+          
           <div class="form-floating mb-3">
             <input type="text" class="form-control" id="name" placeholder="name" required>
             <label class="label" for="floatingInput">Name</label>
           </div>
 
-          <div class="form-floating mb-3">
+          <!-- <div class="form-floating mb-3">
             <input type="text" class="form-control" id="type" placeholder="type" required>
             <label class="label" for="floatingInput">Type</label>
-          </div>
+          </div> -->
 
           <div class="form-floating mb-3">
             <input type="text" class="form-control" id="color" placeholder="color" required>
